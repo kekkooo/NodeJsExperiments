@@ -39,3 +39,5 @@ http.get( process.argv[2], function(response){
 */
 // bottomline, 
 // my solution was more explicit but less in line with node.js philosophy 
+// however I prefer to explicitely define the function that handles the httpresponse
+// instead of declaring it inline.
