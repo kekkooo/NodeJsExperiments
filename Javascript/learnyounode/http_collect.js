@@ -1,17 +1,15 @@
 var http = require('http');
 var url  = process.argv[2];
 
-http.get(url, function(response){
-    var global_counter = 0;
-    var global_data    = '';
+http.get(url, function(response){    
+    var global_data = '';
     response.setEncoding('utf8');
     response.on( 'data',  function(data){
-        global_data    += data;
-        global_counter += data.length;
+        global_data += data;
     });
     response.on( 'error', console.log);
     response.on( 'end', function(data){
-        console.log(global_counter);
+        console.log(global_data.length);
         console.log(global_data);
     })
 })
