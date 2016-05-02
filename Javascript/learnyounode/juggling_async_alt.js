@@ -1,10 +1,11 @@
 var http = require('http');
 var bl   = require('bl');
 
-function Synchronizer(numRequests){
+function Synchronizer(numRequests, callback ){
     this.collectedData  = [];
     this.numRequests    = numRequests;
     this.endedRequests  = 0;
+    this.callback       = callback;
 }
 
 Synchronizer.prototype.setResponse = function(requestId, data){
@@ -14,13 +15,7 @@ Synchronizer.prototype.setResponse = function(requestId, data){
     this.collectedData[requestId] = data;
     this.endedRequests +=1;        
     if( this.endedRequests == this.numRequests ){
-        this.printOrderedData();
-    }
-}
-
-Synchronizer.prototype.printOrderedData = function(){
-    for( var i = 0; i < this.numRequests; ++i ){
-        console.log( this.collectedData[i] );            
+        return this.callback(this.collectedData);
     }
 }
 
@@ -49,11 +44,16 @@ function setupRequest( url, reqId ){
     })
 }
 
-var synchro = new Synchronizer(3);
+var synchro = new Synchronizer(3, function(data){
+    var size = data.length;    
+    for( var i = 0; i < size; ++i ){
+        console.log(data[i]);
+    }
+});
 
 for( var i = 0; i < 3; ++i ){
     setupRequest(process.argv[i+2], i);
 }
-
 // BOTTOMLINE
-// This solution is the same as the juggling_async but works without strict js.
+// This is more in the javascript way, instead of delegating the class to print data
+// handling data is delegated to a callback that is passed to the constructor.
