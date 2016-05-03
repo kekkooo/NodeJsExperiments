@@ -18,3 +18,8 @@ TypeScript/typescripting/objects.js
 TypeScript/typescripting/function_parameters.js
 TypeScript/typescripting/functions.js
 TypeScript/typescripting/scope.js
+TypeScript/learnyounode/typings.json
+TypeScript/learnyounode/typings/browser.d.ts
+TypeScript/learnyounode/typings/browser/ambient/node/index.d.ts
+TypeScript/learnyounode/typings/main.d.ts
+TypeScript/learnyounode/typings/main/ambient/node/index.d.ts
