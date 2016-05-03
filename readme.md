@@ -27,6 +27,7 @@ For typescript you need to install the typescript compiler ( tsc )
 
 ### Running Typescript solutions
 - Run the terminal (es. Powershell, Bash or OsX Terminal)
+- move to the folder containing the tutorial solutions you are interested in ( es. typescripting, for javascripting tutorial)
 - launch the preferred tutorial ( es. javascripting )
 - choose the excercise, then
 ```
