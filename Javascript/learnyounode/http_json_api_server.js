@@ -21,7 +21,7 @@ function unixTime(time){
 
 var server = http.createServer( 
     function handleRequest( request, response ){
-        if( request.headers['method' !== 'GET']){
+        if( request.method !== 'GET'){
             response.end('Send me a GET');            
         }
         var reqInfo = url.parse(request.url, true);
