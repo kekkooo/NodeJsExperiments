@@ -34,3 +34,7 @@ TypeScript/learnyounode/my_first_async_io.js
 TypeScript/learnyounode/my_first_io.js
 TypeScript/learnyounode/.vscode/launch.json
 TypeScript/learnyounode/baby_steps.js
+TypeScript/learnyounode/file_server.js
+TypeScript/learnyounode/http_json_api.js
+TypeScript/learnyounode/http_uppercaserer.js
+TypeScript/learnyounode/time_server.js
