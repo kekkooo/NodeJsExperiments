@@ -9,12 +9,12 @@ var tr_stream = tr.select('.loud').createStream();
                 this.push( chunk.toString().toUpperCase() );
                 callback();
         }))
-    .pipe(tr_stream);        
+    .pipe( tr_stream );        
     
 
 process.stdin.pipe( tr ).pipe( process.stdout );
 
 //BOTTOMLINE
 // It was a little hard to understand.
-// However it makes sense, since tr_stram is full duplex I can read its stream
+// However it makes sense, since tr_stream is full duplex I can read its stream
 // and then write into it.

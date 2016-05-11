@@ -30,6 +30,7 @@ class Synchronizer{
         }
     }
 }
+ 
 
 class Startup {        
     public static main( ) :number{
@@ -53,7 +54,6 @@ class Startup {
         for( var i = 0; i < 3; ++i ){
             setupRequest( i, process.argv[i+2] );
         }        
-                
         return 0;        
     }
 }
